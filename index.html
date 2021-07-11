@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web worker</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/indicator.css">
+    <link rel="stylesheet" href="styles/loader.css">
+</head>
+
+<body>
+
+    <div class="body">
+        <div class="controls">
+            <div class="controls__item danger">
+                <p class="controls__item-title">
+                    Сортировка в потоке
+                </p>
+                <p class="controls__item-description">
+                    Блокирует интерфейс
+                </p>
+                <button id="stream-btn">
+                    Сортировать
+                </button>
+            </div>
+            <div class="controls__item">
+                <p class="controls__item-title">
+                    Индикатор блокировки интерфейса
+                </p>
+                <div class="indicator">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="controls__item success">
+                <p class="controls__item-title">
+                    Сортировка в Web worker
+                </p>
+                <p class="controls__item-description">
+                    Не блокирует интерфейс
+                </p>
+                <button id="worker-btn">
+                    Сортировать
+                </button>
+            </div>
+            <div class="controls__reset">
+                <button id="reset-btn" class="reset-btn">
+                    Очистка
+                </button>
+            </div>
+        </div>
+
+        <div id="app" class="app"></div>
+    </div>
+
+    <script src="js/bubbleSortWorker.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/sw.js"></script>
+</body>
+</html>
